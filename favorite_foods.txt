@@ -2,3 +2,8 @@ Chicken
 Brownie
 Watermelon
 Noodles
+Rice
+Corn
+Juice
+Beans
+
