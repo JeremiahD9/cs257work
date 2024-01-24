@@ -30,7 +30,7 @@ def create_tables():
             port=5432,
             database="dawsonj2",
             user="dawsonj2",
-            password="Eyebrow529redm")
+            password="eyebrow529redm")
         
         # create table one by one
         cur.execute(command1)
@@ -56,7 +56,7 @@ def test_connection():
         port=5432,
         database="dawsonj2",
         user="dawsonj2",
-        password="Eyebrow529redm")
+        password="eyebrow529redm")
 
     if conn is not None:
         print( "Connection Worked!" )
@@ -74,7 +74,7 @@ def test_query_one():
         port=5432,
         database="dawsonj2",
         user="dawsonj2",
-        password="Eyebrow529redm")
+        password="eyebrow529redm")
 
     cur = conn.cursor()
 
@@ -108,7 +108,7 @@ def test_query_all():
         port=5432,
         database="dawsonj2",
         user="dawsonj2",
-        password="Eyebrow529redm")
+        password="eyebrow529redm")
 
     cur = conn.cursor()
 
@@ -141,7 +141,7 @@ def test_query_variable():
         port=5432,
         database="dawsonj2",
         user="dawsonj2",
-        password="Eyebrow529redm")
+        password="eyebrow529redm")
 
     cur = conn.cursor()
 
