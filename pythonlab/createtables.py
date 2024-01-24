@@ -31,7 +31,7 @@ def create_tables():
             database="dawsonj2",
             user="dawsonj2",
             password="eyebrow529redm")
-         cur = conn.cursor()
+        cur = conn.cursor()
         # create table one by one
         cur.execute(command1)
         cur.execute(command2)
