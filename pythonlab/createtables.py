@@ -166,7 +166,7 @@ def test_query_variable():
     return None
 
 create_tables()
-print( test_query_one() )
+"print( test_query_one() )"
 
 # test_query_all()
 
