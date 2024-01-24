@@ -8,18 +8,18 @@ def create_tables():
     """ create tables in the PostgreSQL database"""
     
 
-    command1 = "CREATE TABLE cities (
+    command1 = """CREATE TABLE cities (
             city_name VARCHAR(255) NOT NULL,
             city_state VARCHAR(255) NOT NULL,
             city_population INTEGER NOT NULL,
             city_lat REAL NOT NULL,
             city_lon REAL NOT NULL
-        )"
+        )"""
 
-    command2 = "CREATE TABLE states(
+    command2 = """CREATE TABLE states(
             state_name VARCHAR(255) NOT NULL,
             state_abb VARCHAR(255) NOT NULL
-        )"
+        )"""
         
     
     
