@@ -1,7 +1,7 @@
 # We use the psycopg2 library to help us connec to the Postgres SQL database
 # This library is already installed on stearns.mathcs.carleton.edu
 import psycopg2
-from config import config
+
 
 
 def create_tables():
