@@ -76,7 +76,7 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql = "SELECT name, abb FROM states WHERE abb = 'MN' "
+    sql = "SELECT name, state_abb FROM states WHERE state_abb = 'MN' "
     
     cur.execute( sql )
 
@@ -110,7 +110,7 @@ def test_query_all():
 
     cur = conn.cursor()
 
-    sql = "SELECT name, abb FROM states"
+    sql = "SELECT name, state_abb FROM states"
     
     cur.execute( sql )
 
@@ -145,7 +145,7 @@ def test_query_variable():
 
 
     # Here the %s signals that we will replace this with a variable later
-    sql = "SELECT name, abb FROM states WHERE abb = %s OR abb = %s "
+    sql = "SELECT name, state_abb FROM states WHERE state_abb = %s OR state_abb = %s "
 
     state_abb1 = 'MN'
     state_abb2 = 'NM'
@@ -163,8 +163,9 @@ def test_query_variable():
 
     return None
 
-print( test_query_one() )
 create_tables()
+print( test_query_one() )
+
 # test_query_all()
 
 # test_query_variable()
