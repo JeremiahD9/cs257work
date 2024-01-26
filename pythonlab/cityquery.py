@@ -83,6 +83,7 @@ def smallestPopulationMN():
 def main():
     isNorthfield()
     largestPopulation()
+    smallestPopulationMN()
 
 main()
 
