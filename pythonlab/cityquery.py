@@ -10,7 +10,7 @@ def isNorthfield():
 
     cur = conn.cursor()
 
-    query = "SELECT City FROM us-cities-top-1k WHERE City = 'Northfield'"
+    query = "SELECT city_name FROM cities WHERE city_name = 'Northfield'"
 
     cur.execute(query)
     row = cur.fetchall()
@@ -24,3 +24,6 @@ def main():
     print(isNorthfield())
 
 main()
+
+
+
