@@ -38,9 +38,9 @@ def largestPopulation():
     largestPop = 0
 
     for row in row_list:
-        print(row)
-        if(int(row) > int(largestPop)):
-            largestPop = row
+        print(row[0])
+        if(row[0] > int(largestPop)):
+            largestPop = row[0]
     
     query = "SELECT city_population FROM cities WHERE city_population = %s"
     cur.execute(query, [largestPop])
