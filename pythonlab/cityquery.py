@@ -42,11 +42,11 @@ def largestPopulation():
         if(row[0] > int(largestPop)):
             largestPop = row[0]
     
-    query = "SELECT city_population FROM cities WHERE city_population = %s"
+    query = "SELECT city_name, city_population FROM cities WHERE city_population = %s"
     cur.execute(query, [largestPop])
     row_list = cur.fetchall()
     
-    print(row_list)
+    print("City Name: ", row_list[0][0], ", City Population: ", row_list[0][1])
     
     return None
 
