@@ -18,10 +18,12 @@ def isNorthfield():
     if row == None:
         row = "Northfield could not be found in the database"
     
-    return row
+    print(row)
+    
+    return None
 
 def main():
-    print(isNorthfield())
+    isNorthfield()
 
 main()
 
