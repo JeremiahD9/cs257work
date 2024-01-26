@@ -45,7 +45,7 @@ def largestPopulation():
     cur.execute(query, [largestPop])
     row_list = cur.fetchall()
     
-    print(row)
+    print(row_list)
     
     return None
 
