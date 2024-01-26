@@ -15,7 +15,7 @@ def isNorthfield():
     cur.execute(query)
     row = cur.fetchall()
 
-    if row == None:
+    if len(row) == 0:
         row = "Northfield could not be found in the database"
     
     print(row)
