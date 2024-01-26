@@ -38,6 +38,7 @@ def largestPopulation():
     largestPop = 0
 
     for row in row_list:
+        print(row)
         if(row > largestPop):
             largestPop = row
     
