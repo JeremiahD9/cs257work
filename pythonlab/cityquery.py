@@ -60,7 +60,7 @@ def smallestPopulationMN():
 
     cur = conn.cursor()
 
-    query = "SELECT city_population FROM cities"
+    query = "SELECT city_population FROM cities WHERE city_name = 'Minnesota'"
     cur.execute(query)
 
     row_list = cur.fetchall()
