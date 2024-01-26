@@ -22,8 +22,36 @@ def isNorthfield():
     
     return None
 
+def largestPopulation():
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="dawsonj2",
+        user="dawsonj2",
+        password="eyebrow529redm")
+
+    cur = conn.cursor()
+
+    query = "SELECT city_population FROM cities"
+    cur.execute(query)
+    row_list = cur.fetchall()
+    largestPop = 0
+
+    for row in row_list:
+        if(row > largestPop):
+            largestPop = row
+    
+    query = "SELECT city_population FROM cities WHERE city_population == largestPop"
+    cur.execute(query)
+    row_list = cur.fetchall()
+    
+    print(row)
+    
+    return None
+
 def main():
     isNorthfield()
+    largestPopulation()
 
 main()
 
