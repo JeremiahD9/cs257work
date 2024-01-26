@@ -1,22 +1,26 @@
 import psycopg2
 
-def get_city():
-    """ query parts from the parts table """
-    conn = None
-    try:
-        params = config()
-        conn = psycopg2.connect(**params)
-        cur = conn.cursor()
-        cur.execute("SELECT part_id, part_name FROM parts ORDER BY part_name")
-        rows = cur.fetchall()
-        print("The number of parts: ", cur.rowcount)
-        for row in rows:
-            print(row)
-        cur.close()
-    except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
-    finally:
-        if conn is not None:
-            conn.close()
+def isNorthfield():
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="dawsonj2",
+        user="dawsonj2",
+        password="eyebrow529redm")
 
-get_city()
+    cur = conn.cursor()
+
+    query = "SELECT City FROM us-cities-top-1k WHERE City = 'Northfield'"
+
+    cur.execute(query)
+    row = cur.fetchall()
+
+    if row == None:
+        row = "Northfield could not be found in the database"
+    
+    return row
+
+def main():
+    print(isNorthfield())
+
+main()
