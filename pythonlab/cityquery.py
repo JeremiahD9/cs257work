@@ -102,8 +102,7 @@ def furthestDir():
     eastCity = ""
     westCity = ""
 
-    for row in row_list:
-        print(row[1])
+    
     # row[0] is lat (North & South) and row[1] is long (East & West)
     for row in row_list:
         if row[0] > furthestNorth:
@@ -128,7 +127,7 @@ def furthestDir():
     cur.execute(query, [southCity])
     southRow = cur.fetchall()
 
-    print("East City Name: ", westCity)
+    
     query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_name = %s"
     cur.execute(query, [eastCity])
     eastRow = cur.fetchall()
@@ -141,7 +140,8 @@ def furthestDir():
 
     print(" Furthest City North: ", northRow[0][0], " (", northRow[0][1], ", ", northRow[0][2], ")\n",
          "Furthest City South: ", southRow[0][0], " (", southRow[0][1], ", ", southRow[0][2], ")\n",
-         "Furthest City East: ", southRow[0][0], " (", southRow[0][1], ", ", southRow[0][2], ")\n")
+         "Furthest City East: ", eastRow[0][0], " (", eastRow[0][1], ", ", eastRow[0][2], ")\n",
+         "Furthest City West: ", westRow[0][0], " (", westRow[0][1], ", ", westRow[0][2], ")")
 
     
 
