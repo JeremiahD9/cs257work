@@ -135,12 +135,7 @@ def furthestDir():
     cur.execute(query, [westCity])
     westRow = cur.fetchall()
 
-   # print(northRo)
-
-    #print("Furthest City North: ", northRow[0][0], " (", northRow[0][1], ", ", northRow[0][2], ")\n",
- #         "Furthest City South: ", southRow[0][0], " (", southRow[0][1], ", ", southRow[0][2], ")\n",
-  #        "Furthest City East: ", eastRow[0][0], " (", eastRow[0][1], ", ", eastRow[0][2], ")\n",
-   #       "Furthest City West: ", westRow[0][0], " (", westRow[0][1], ", ", westRow[0][2], ")")
+    print("Furthest City North: ", northRow[0][0], " (", northRow[0][1], ", ", northRow[0][2], ")\n")
 
     
 
