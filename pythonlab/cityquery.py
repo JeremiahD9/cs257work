@@ -111,7 +111,6 @@ def furthestDir():
             furthestSouth = row[0]
             southCity = row[2]
         if(row[1] > furthestEast):
-            print(furthestEast)
             furthestEast = row[1]
             eastCity = row[2]
         if(row[1] < furthestWest):
