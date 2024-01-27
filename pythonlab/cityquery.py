@@ -156,7 +156,7 @@ def findPopulation():
     user = input("Enter State: ")
     print("User Input: ", user)
 
-    query = "SELECT city_name, city_population FROM cities WHERE city_name = %s"
+    query = "SELECT city_name, city_population FROM cities WHERE city_state = %s"
     cur.execute(query, [user])
     row_list = cur.fetchall()
     print(row_list)
