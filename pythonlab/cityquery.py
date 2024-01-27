@@ -145,6 +145,7 @@ def furthestDir():
 
 
 def findPopulation():
+
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -154,15 +155,14 @@ def findPopulation():
 
     cur = conn.cursor()
     user = input("Enter State: ")
-    print("User Input: ", user)
 
     query = "SELECT city_name, city_population FROM cities WHERE city_state = %s"
     cur.execute(query, [user])
     row_list = cur.fetchall()
-    print(row_list)
+
 
     for row in row_list:
-        print("City: ", row[0], " Population: ", row[1])
+        print("City: ", row[0], " Population: ", row[1], "\n")
 
 
 
