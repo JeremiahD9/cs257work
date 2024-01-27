@@ -162,7 +162,7 @@ def findPopulation():
 
 
     for row in row_list:
-        print("City: ", row[0], ", Population: ", row[1])
+        print("City:", row[0], ", Population:", row[1])
 
 
 
