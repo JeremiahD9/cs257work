@@ -104,6 +104,7 @@ def furthestDir():
 
     for row in row_list:
         row[1]
+        print("Testing")
     # row[0] is lat (North & South) and row[1] is long (East & West)
     for row in row_list:
         if row[0] > furthestNorth:
