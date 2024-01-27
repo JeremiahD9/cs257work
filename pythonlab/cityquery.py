@@ -154,6 +154,7 @@ def findPopulation():
 
     cur = conn.cursor()
     user = input("Enter State: ")
+    print(user)
 
     query = "SELECT city_name, city_population FROM cities WHERE city_name = %s"
     cur.execute(query, [user])
