@@ -1,6 +1,7 @@
 import psycopg2
 import sys
 
+
 def isNorthfield():
     conn = psycopg2.connect(
         host="localhost",
@@ -87,7 +88,7 @@ def furthestDir():
     
     cur = conn.cursor()
 
-    query = "SELECT city_lat, city_lon FROM cities"
+    query = "SELECT city_lat, city_lon, city_name FROM cities"
     cur.execute(query)
     row_list = cur.fetchall()
 
@@ -96,36 +97,44 @@ def furthestDir():
     furthestEast = sys.float_info.min
     furthestWest = sys.float_info.max
 
+    northCity = ""
+    southCity = ""
+    eastCity = ""
+    westCity = ""
+
     # row[0] is lat (North & South) and row[1] is long (East & West)
     for row in row_list:
         if row[0] > furthestNorth:
             furthestNorth = row[0]
+            northCity = row[2]
         if(row[0] < furthestSouth):
             furthestSouth = row[0]
+            southCity = row[2]
         if(row[1] > furthestEast):
             furthestEast = row[1]
+            eastCity = row[2]
         if(row[1] < furthestWest):
             furthestWest = row[1]
+            westCity = row[2]
     
     print("Furthest North: ", furthestNorth)
     query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_lat = %s"
-    cur.execute(query, [furthestNorth])
+    cur.execute(query, [northCity])
     northRow = cur.fetchall()
-    print(northRow)
 
     query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_lat = %s"
-    cur.execute(query, [furthestSouth])
+    cur.execute(query, [southCity])
     southRow = cur.fetchall()
 
     query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_lon = %s"
-    cur.execute(query, [furthestEast])
+    cur.execute(query, [eastCity])
     eastRow = cur.fetchall()
 
     query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_lon = %s"
-    cur.execute(query, [furthestWest])
+    cur.execute(query, [westCity])
     westRow = cur.fetchall()
 
-    
+   # print(northRo)
 
     #print("Furthest City North: ", northRow[0][0], " (", northRow[0][1], ", ", northRow[0][2], ")\n",
  #         "Furthest City South: ", southRow[0][0], " (", southRow[0][1], ", ", southRow[0][2], ")\n",
