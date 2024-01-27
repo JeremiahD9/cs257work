@@ -88,7 +88,7 @@ def furthestDir():
     
     cur = conn.cursor()
 
-    query = "SELECT city_lat, city_name, city_lon, FROM cities"
+    query = "SELECT city_lat, city_lon, city_name FROM cities"
     cur.execute(query)
     row_list = cur.fetchall()
 
@@ -103,7 +103,7 @@ def furthestDir():
     westCity = ""
 
     for row in row_list:
-        print(row[2])
+        print(row[1])
     # row[0] is lat (North & South) and row[1] is long (East & West)
     for row in row_list:
         if row[0] > furthestNorth:
