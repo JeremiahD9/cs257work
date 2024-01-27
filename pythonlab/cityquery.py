@@ -158,6 +158,7 @@ def findPopulation():
     query = "SELECT city_name, city_population FROM cities WHERE city_name = %s"
     cur.execute(query, [user])
     row_list = cur.fetchall()
+    print(row_list)
 
     for row in row_list:
         print("City: ", row[0], " Population: ", row[1])
