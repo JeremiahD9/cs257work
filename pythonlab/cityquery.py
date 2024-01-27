@@ -103,7 +103,7 @@ def furthestDir():
     westCity = ""
 
     for row in row_list:
-        print(row[1])
+        
     
     # row[0] is lat (North & South) and row[1] is long (East & West)
     for row in row_list:
@@ -114,7 +114,7 @@ def furthestDir():
             furthestSouth = row[0]
             southCity = row[2]
         if(row[1] > furthestEast):
-            print(furthestEast)
+            print(row[1])
             furthestEast = row[1]
             eastCity = row[2]
         if(row[1] < furthestWest):
