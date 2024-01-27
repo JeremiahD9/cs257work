@@ -125,7 +125,7 @@ def furthestDir():
     cur.execute(query, [southCity])
     southRow = cur.fetchall()
 
-    print("East City Name: ", eastCity)
+    print("East City Name: ", westCity)
     query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_name = %s"
     cur.execute(query, [eastCity])
     eastRow = cur.fetchall()
