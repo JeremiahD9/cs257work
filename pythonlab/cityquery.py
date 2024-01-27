@@ -88,7 +88,7 @@ def furthestDir():
     
     cur = conn.cursor()
 
-    query = "SELECT city_lat, city_lon, city_name FROM cities"
+    query = "SELECT city_lat, city_name, city_lon, FROM cities"
     cur.execute(query)
     row_list = cur.fetchall()
 
