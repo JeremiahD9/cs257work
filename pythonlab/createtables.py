@@ -1,7 +1,7 @@
 # We use the psycopg2 library to help us connec to the Postgres SQL database
 # This library is already installed on stearns.mathcs.carleton.edu
 import psycopg2
-from config import config
+
 
 
 def create_tables():
@@ -25,10 +25,12 @@ def create_tables():
     
     conn = None
     try:
-        # read the connection parameters
-        params = config()
-        # connect to the PostgreSQL server
-        conn = psycopg2.connect(**params)
+        conn = psycopg2.connect(
+            host="localhost",
+            port=5432,
+            database="dawsonj2",
+            user="dawsonj2",
+            password="eyebrow529redm")
         cur = conn.cursor()
         # create table one by one
         cur.execute(command1)
@@ -54,7 +56,7 @@ def test_connection():
         port=5432,
         database="dawsonj2",
         user="dawsonj2",
-        password="Eyebrow529redm")
+        password="eyebrow529redm")
 
     if conn is not None:
         print( "Connection Worked!" )
@@ -72,11 +74,11 @@ def test_query_one():
         port=5432,
         database="dawsonj2",
         user="dawsonj2",
-        password="Eyebrow529redm")
+        password="eyebrow529redm")
 
     cur = conn.cursor()
 
-    sql = "SELECT name, abb FROM states WHERE abb = 'MN' "
+    sql = "SELECT name, state_abb FROM states WHERE state_abb = 'MN' "
     
     cur.execute( sql )
 
@@ -106,11 +108,11 @@ def test_query_all():
         port=5432,
         database="dawsonj2",
         user="dawsonj2",
-        password="Eyebrow529redm")
+        password="eyebrow529redm")
 
     cur = conn.cursor()
 
-    sql = "SELECT name, abb FROM states"
+    sql = "SELECT name, state_abb FROM states"
     
     cur.execute( sql )
 
@@ -139,13 +141,13 @@ def test_query_variable():
         port=5432,
         database="dawsonj2",
         user="dawsonj2",
-        password="Eyebrow529redm")
+        password="eyebrow529redm")
 
     cur = conn.cursor()
 
 
     # Here the %s signals that we will replace this with a variable later
-    sql = "SELECT name, abb FROM states WHERE abb = %s OR abb = %s "
+    sql = "SELECT name, state_abb FROM states WHERE state_abb = %s OR state_abb = %s "
 
     state_abb1 = 'MN'
     state_abb2 = 'NM'
@@ -163,10 +165,9 @@ def test_query_variable():
 
     return None
 
-#print( test_query_one() )
 create_tables()
+"print( test_query_one() )"
+
 # test_query_all()
 
 # test_query_variable()
-
-
