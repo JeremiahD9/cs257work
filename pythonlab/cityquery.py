@@ -94,7 +94,7 @@ def furthestDir():
 
     furthestNorth = sys.float_info.min
     furthestSouth = sys.float_info.max
-    furthestEast = sys.float_info.min
+    furthestEast = -500
     furthestWest = sys.float_info.max
 
     northCity = ""
