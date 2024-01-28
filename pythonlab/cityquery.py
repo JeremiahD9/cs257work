@@ -156,13 +156,29 @@ def findPopulation():
     cur = conn.cursor()
     user = input("Enter State: ")
 
+
+    
     query = "SELECT city_name, city_population FROM cities WHERE city_state = %s"
-    cur.execute(query, [user])
-    row_list = cur.fetchall()
+    query2 = "SELECT state_name FROM states WHERE state_abb = %s"
+    
+    cur.execute(query2, [user])
+    row2_list = cur.fetchall()
+    
+    if len(row2_list) == 0:
+        cur.execute(query, [user])
+        row_list = cur.fetchall()
+        for row in row_list:
+            print("City:", row[0], ", Population:", row[1])
+    else:
+        cur.execute(query, [row2_list[0][0]])
+        row_list = cur.fetchall()
+        for row in row_list:
+            print("City:", row[0], ", Population:", row[1])
+
+    
 
 
-    for row in row_list:
-        print("City:", row[0], ", Population:", row[1])
+    
 
 
 
