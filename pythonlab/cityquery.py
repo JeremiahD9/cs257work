@@ -12,7 +12,7 @@ def isNorthfield():
 
     cur = conn.cursor()
 
-    query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_name = 'Northfield'"
+    query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_name = 'Miami'"
 
     cur.execute(query)
     row = cur.fetchall()
