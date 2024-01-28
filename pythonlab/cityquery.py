@@ -16,13 +16,13 @@ def isNorthfield():
 
     cur.execute(query)
     row = cur.fetchall()
-
-
+    
+    print("Northfield Length: ", row)
     
     if len(row) == 0:
         print = "Northfield could not be found in the database"
-    else:
-        print("Northfield (", row[0][1], ", ", row[0][2], ")")
+    #else:
+       # print("Northfield (", row[0][1], ", ", row[0][2], ")")
 
 def largestPopulation():
     conn = psycopg2.connect(
