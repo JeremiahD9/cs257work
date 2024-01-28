@@ -18,6 +18,7 @@ def isNorthfield():
     row = cur.fetchall()
 
     print("Northfield Length: ", len(row))
+    
     if len(row) == 0:
         print = "Northfield could not be found in the database"
     else:
