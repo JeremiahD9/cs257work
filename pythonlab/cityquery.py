@@ -12,17 +12,15 @@ def isNorthfield():
 
     cur = conn.cursor()
 
-    query = "SELECT city_name FROM cities WHERE city_name = 'Northfield'"
+    query = "SELECT city_name, city_lat, city_lon FROM cities WHERE city_name = 'Northfield'"
 
     cur.execute(query)
     row = cur.fetchall()
 
     if len(row) == 0:
         row = "Northfield could not be found in the database"
-    
-    print(row)
-    
-    return None
+    else:
+        print("Northfield (", row[0][1], ", ", row[0][2], ")")
 
 def largestPopulation():
     conn = psycopg2.connect(
