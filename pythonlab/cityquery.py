@@ -19,7 +19,7 @@ def isNorthfield():
 
     print("Northfield Length: ", len(row))
     if len(row) == 0:
-        row = "Northfield could not be found in the database"
+        print = "Northfield could not be found in the database"
     else:
         print("Northfield (", row[0][1], ", ", row[0][2], ")")
 
