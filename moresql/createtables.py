@@ -9,7 +9,7 @@ def create_tables():
     command1 = """CREATE TABLE CityPopulation (
             state_abb VARCHAR(255) NOT NULL,
             state_name VARCHAR(255) NOT NULL,
-            state_pop INTEGER NOT NULL,
+            state_pop INTEGER NOT NULL
         )"""
         
     
