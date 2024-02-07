@@ -17,6 +17,6 @@ def my_color(word1):
     return '<h1 style="color:Red">' + word1 + '</h1>'
 
 if __name__ == '__main__':
-    my_port = ????
+    my_port = 5124
     app.run(host='0.0.0.0', port = my_port) 
 
