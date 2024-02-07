@@ -21,7 +21,7 @@ def addition(num1, num2):
     num1 = float(num1)
     num2 = float(num2)
     addNum = num1 + num2
-    the_string = "" + num1 + "+" + num2 + "=" + addNum
+    the_string = str(num1) + "+" + str(num2) + "=" + str(addNum)
     return the_string
 
 if __name__ == '__main__':
