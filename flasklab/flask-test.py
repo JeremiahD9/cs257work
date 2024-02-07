@@ -41,7 +41,7 @@ def findPop(ab):
     cur.execute(query2, [ab])
     row_list = cur.fetchall()
 
-    cur.execute(query1, row_list[0][0])
+    cur.execute(query1, [row_list[0][0]])
     row_list = cur.fetchall()
 
     for row in row_list:
