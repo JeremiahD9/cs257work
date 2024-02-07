@@ -26,6 +26,28 @@ def addition(num1, num2):
 
 @app.route('pop/abbrev/<ab>')
 def findPop(ab):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="dawsonj2",
+        user="dawsonj2",
+        password="eyebrow529redm")
+
+    cur = conn.cursor()
+    
+    query = "SELECT city_population FROM cities WHERE city_state = %s"
+    query2 = "SELECT state_name FROM states WHERE state_abb = %s"
+    
+    cur.execute(query2, [ab])
+    row_list = cur.fetchall()
+
+    cur.execute(query1, row_list[0][0])
+    row_list = cur.fetchall()
+
+    for row in row_list:
+        statePop += row[0]
+
+    return str(statePop)
     
 
 if __name__ == '__main__':
