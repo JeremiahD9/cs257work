@@ -35,15 +35,12 @@ def findPop(ab):
 
     cur = conn.cursor()
     
-    query = "SELECT city_population FROM cities WHERE city_state = %s"
-    query2 = "SELECT state_name FROM states WHERE state_abb = %s"
+    query = "SELECT state_pop FROM CityPopulation WHERE state_abb = %s"
     
-    cur.execute(query2, [ab])
+    
+    cur.execute(query, [ab])
     row_list = cur.fetchall()
-
-    cur.execute(query, [row_list[0][0]])
-    row_list = cur.fetchall()
-
+    
     for row in row_list:
         statePop += row[0]
 
