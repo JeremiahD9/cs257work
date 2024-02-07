@@ -24,7 +24,7 @@ def addition(num1, num2):
     the_string = str(num1) + "+" + str(num2) + "=" + str(addNum)
     return the_string
 
-@app.route('pop/abbrev/<ab>')
+@app.route('/pop/<ab>')
 def findPop(ab):
     conn = psycopg2.connect(
         host="localhost",
