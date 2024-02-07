@@ -36,14 +36,14 @@ def findPop(ab):
 
     cur = conn.cursor()
     
-    query = "SELECT state_name FROM CityPopulation WHERE state_abb = %s"
+    query = "SELECT state_pop FROM CityPopulation WHERE state_abb = %s"
     
     cur.execute(query, [ab])
     row_list = cur.fetchall()
 
-    stateName = row_list[0][0]
+    statePop = row_list[0][0]
 
-    return str(stateName)
+    return str(statePop)
     
 
 if __name__ == '__main__':
