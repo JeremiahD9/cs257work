@@ -3,7 +3,7 @@ import flask
 app = flask.Flask(__name__)
 
 #
-@app.route('/Noah Got Small PP')
+@app.route('/hello')
 def my_function():
     return "Hello World!"
 
