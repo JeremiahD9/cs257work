@@ -16,7 +16,7 @@ def my_display(word1, word2):
 def my_color(word1):
     return '<h1 style="color:Red">' + word1 + '</h1>'
 
-@app.route('/math/<num1>/<num2>')
+@app.route('/add/<num1>/<num2>')
 def addition(num1, num2):
     addNum = num1 + num2
     the_string = num1 + "+" + num2 + "=" + addNum
