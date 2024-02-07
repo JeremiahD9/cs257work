@@ -18,7 +18,9 @@ def my_color(word1):
 
 @app.route('/add/<num1>/<num2>')
 def addition(num1, num2):
-    addNum = float(num1) + float(num2)
+    num1 = float(num1)
+    num2 = float(num2)
+    addNum = num1 + num2
     the_string = num1 + "+" + num2 + "=" + addNum
     return the_string
 
