@@ -43,7 +43,7 @@ def findPop(ab):
 
     statePop = row_list[0][0]
 
-    return "The population of " + str(ab) ": " + str(statePop)
+    return "The population of " + str(ab) + ": " + str(statePop)
     
 
 if __name__ == '__main__':
