@@ -1,4 +1,5 @@
 import flask
+import psycopg2
 
 app = flask.Flask(__name__)
 
@@ -36,7 +37,6 @@ def findPop(ab):
     cur = conn.cursor()
     
     query = "SELECT state_pop FROM CityPopulation WHERE state_abb = %s"
-    
     
     cur.execute(query, [ab])
     row_list = cur.fetchall()
