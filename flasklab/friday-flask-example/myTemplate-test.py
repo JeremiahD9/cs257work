@@ -29,7 +29,7 @@ def randSentence():
     adjective = random.choice(adjectives)
     year = random.choice(years)
 
-    sentence = name + " the " + adjective + " was born in " + randCity() + " in " + year
+    sentence = name + " the " + adjective + " was born in " + randCity() + " in " + str(year)
     return render_template("SentenceGenerator.html", sentence)
 
 
