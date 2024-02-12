@@ -45,7 +45,7 @@ def randCity():
     query = "SELECT * FROM cities ORDER BY RANDOM()"
     cur.execute(query)
 
-    row_list = cur.fetchone()
+    row_list = cur.fetchall()
 
     return row_list[0][0]
 
