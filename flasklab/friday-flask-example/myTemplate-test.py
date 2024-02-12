@@ -21,7 +21,7 @@ def rand(low, high):
 
 @app.route('/sentence')
 def randSentence():
-    names = ["Jeremiah", "Mason", "Kyle", "SJ", "Josh", "Makai", "Noa", "Noah", "Raghav", "Gus", "Mariana", "Alice", "Mary", "Shanti", "Ahana", "Kiana", "Katelyn", "Monica"]
+    names = ["Jeremiah", "Mason", "Kyle", "SJ", "Josh", "Ma'ki", "Noa", "Noah", "Raghav", "Gus", "Mariana", "Alice", "Mary", "Shanti", "Ahana", "Kiana", "Katelyn", "Monica", "Anthony"]
     adjectives = ["ugly", "cute", "sexy", "weird", "cool", "hot", "creepy", "musty"]
     years = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006]
 
